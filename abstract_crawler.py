@@ -62,12 +62,15 @@ def save_to_txt(abstract):
 
     try:
         file = open(complete_name, 'w')
-        file.write(abstract)
+        file.write(abstract + "\n")
         file.close()
     except:
         print 'There is something wrong!'
         sys.exit(0)
 
-year_start = input("Which year you want to start? Type in the last two digit of the year. (e.g. 2015 --- 15)")
-year_end = input("Which year you want to end? Type in the last two digit of the year. (e.g. 2015 --- 15)")
-get_abstract(year_start, year_end)
+def run_crawler():
+    year_start = input("Which year you want to start? Type in the last two digit of the year. (e.g. 2015 --- 15)")
+    year_end = input("Which year you want to end? Type in the last two digit of the year. (e.g. 2015 --- 15)")
+    get_abstract(year_start, year_end)
+
+run_crawler()
